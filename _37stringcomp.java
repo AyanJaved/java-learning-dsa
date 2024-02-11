@@ -1,4 +1,4 @@
-public class _36stringcomp {
+public class _37stringcomp {
     public static void main(String args[]){
         String s1="Rahul";
         String s2="Rahul";
