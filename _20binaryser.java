@@ -3,7 +3,7 @@ public class _20binaryser {
         int start = 0;
         int end = number.length - 1;
         while(start <= end){
-            int mid = end/2 + (start + end) / 2; 
+            int mid = start + (end - start ) / 2; 
             if ( number[mid] == key){
                 return mid;
             }
