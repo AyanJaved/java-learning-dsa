@@ -5,7 +5,7 @@ public class _27rainwater {
         int leftmax[] = new int[n] ;
         leftmax[0]= height[0];
         for(int i=1; i<n ;i++){
-            leftmax[i]= Math.max(leftmax[i],leftmax[i-1]);
+            leftmax[i]= Math.max(height[i],leftmax[i-1]);
         }
         //calculate right max boundary - auxillary array
         int rightmax[] = new int[n];
