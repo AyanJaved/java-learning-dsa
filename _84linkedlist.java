@@ -186,6 +186,45 @@ public class _84linkedlist {
         }
         return true;
     }
+    public static boolean isCycle(){
+        Node slow = head;
+        Node fast = head;
+        while(fast != null && fast.next !=null){
+            slow = slow.next;
+            fast = fast.next.next;
+            if(slow == fast){
+                return true;
+            }
+        }
+        return false;
+    }
+    public static void removeCyle(){
+        //detect cycle
+        Node slow = head;
+        Node fast = head;
+        boolean cycle = false;
+        while(fast != null && fast.next != null){
+            slow = slow.next;
+            fast = fast.next.next;
+            if(slow == fast ){
+                cycle = true;
+                break;
+            }
+        }
+        if(cycle == false ){
+            return;
+        }
+        // find meeting point
+        slow = head ;
+        Node prev = null;
+        while(slow!=fast){
+            prev = fast;
+            slow = slow.next;
+            fast = fast.next;
+        }
+        //remove cycle
+        prev.next = null;
+    }
     public static void main(String[] args) {
         // _84linkedlist ll = new _84linkedlist();
         // ll.addFirst(1);
@@ -204,12 +243,20 @@ public class _84linkedlist {
         // ll.printLL();
         // ll.deleteNthfromEnd(1);
         // ll.printLL();
-        _84linkedlist ll2 = new _84linkedlist();
-        ll2.addLast(1);
-        ll2.addLast(2);
-        ll2.addLast(2);
-        ll2.addLast(1);
-        ll2.printLL();
-        System.out.println(ll2.checkPalindrome());
+        // _84linkedlist ll2 = new _84linkedlist();
+        // ll2.addLast(1);
+        // ll2.addLast(2);
+        // ll2.addLast(2);
+        // ll2.addLast(1);
+        // ll2.printLL();
+        // System.out.println(ll2.checkPalindrome());
+        head =new Node(1);
+        Node temp = new Node(2);
+        head.next = temp;
+        head.next.next = new Node(3);
+        head.next.next.next = temp;
+        System.out.println(isCycle());
+        removeCyle();
+        System.out.println(isCycle());
     }
 }
