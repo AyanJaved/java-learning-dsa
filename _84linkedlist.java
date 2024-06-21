@@ -18,6 +18,7 @@ public class _84linkedlist {
         // if the list is empty
         if(head==null){
             head=tail=newNode;
+            return;
         }
 
         // pointing head at first
@@ -243,6 +244,7 @@ public class _84linkedlist {
         // ll.printLL();
         // ll.deleteNthfromEnd(1);
         // ll.printLL();
+        // palindrome
         // _84linkedlist ll2 = new _84linkedlist();
         // ll2.addLast(1);
         // ll2.addLast(2);
@@ -250,13 +252,15 @@ public class _84linkedlist {
         // ll2.addLast(1);
         // ll2.printLL();
         // System.out.println(ll2.checkPalindrome());
-        head =new Node(1);
-        Node temp = new Node(2);
-        head.next = temp;
-        head.next.next = new Node(3);
-        head.next.next.next = temp;
-        System.out.println(isCycle());
-        removeCyle();
-        System.out.println(isCycle());
+        //cycle
+        // head =new Node(1);
+        // Node temp = new Node(2);
+        // head.next = temp;
+        // head.next.next = new Node(3);
+        // head.next.next.next = temp;
+        // System.out.println(isCycle());
+        // removeCyle();
+        // System.out.println(isCycle());
+        
     }
 }
