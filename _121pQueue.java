@@ -1,5 +1,4 @@
-import java.util.Comparator;
-import java.util.PriorityQueue;
+import java.util.*;
 
 public class _121pQueue {
     static class Student implements Comparable<Student>{
